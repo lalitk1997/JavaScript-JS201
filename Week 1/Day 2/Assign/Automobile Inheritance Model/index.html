@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance Assignment</title>
+</head>
+<body>
+    
+</body>
+</html>
+<!-- <script src="main.js"></script> -->
+<script>
+    // console.log("Hello!");
+    // VIA INHERITANCE
+    // let car = {
+    //     name: "TATA-CAR",
+    //     wheel: 4,
+    //     engine: 1,
+    //     door: 4,
+    //     seating: 5
+    // }
+    // console.log(car);
+    // let baleno = Object.create(car, {name: {value : "Baleno"}}); 
+    // console.log(baleno);
+    // let nexon = Object.create(car, {name: {value : "Nexon"}});
+    // console.log(nexon);
+    
+    // VIA CONSTRUCTOR FUNCTION
+    function Car(){
+        this.wheel = 4,
+        this.engine = 1,
+        this.door = 4,
+        this.seating = 5
+    }
+    let car_template = new Car();
+    // console.log(car_template);
+
+    let baleno = Object.create(car_template, {name: {value : "Baleno"}});
+    console.log(baleno);
+    let nexon = Object.create(car_template, {name: {value : "Nexon"}});
+    console.log(nexon);
+
+</script>

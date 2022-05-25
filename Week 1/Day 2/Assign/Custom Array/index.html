@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Array Assignment</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // Create a custom Array constructor which will return an array object.
+    // It should have a property size based on the length of arguments passed.
+    // Add the arguments as key(index) value pairs in the Array object.
+    // Use the “.prototype” property to add custom methods to the Array.
+    // Add following methods :-
+    // .push // Should add an element at the end.
+    // .pop() // Should remove an element from the end.
+    // .top() // Should return the element at the last index.
+    // .print() // Should print the elements in a single line (e.g. [1,2,3,4]).
+    // .printReverse() // Should print the elements in a single line in reverse order.
+    // .size // Should return the length of the stack
+
+    // CUNSTRUCTOR FUNCTION ARRAY
+    function MyArray(){
+        Object.defineProperty(this, "length", {
+            value: 0,
+            writable: true,
+            enumerable: false,
+        });
+        this.size = arguments.length;
+        // this.name = "Lalit";
+        for(let i=0; i<arguments.length; i++){
+            this[i] = arguments[i];
+        }
+        // console.log(arguments);
+    };
+    // PROTOTYPE FUNCTION
+    // PUSH
+    MyArray.prototype.push = function(value){
+        this[this.size] = value;
+        this.size++;
+    }
+    // POP 
+    MyArray.prototype.pop = function(){
+        delete this[this.size-1];
+        this.size--;
+    }
+    // TOP 
+    MyArray.prototype.top = function(){
+        // console.log(this[this.length-1]);
+        // console.log(this.size-1);
+        return this[this.size-1];
+    }
+    // PRINT
+    MyArray.prototype.print = function(){
+        let bag = '';
+        for(let i=0; i<this.size; i++){
+            bag = bag + this[i] + ' ';
+        }
+        console.log(Object.values(bag));
+    }
+    // PRINT-REVERSE
+    MyArray.prototype.printReverse = function(){
+        let bag = '';
+        for(let i=this.size-1; i>=0; i--){
+            bag = bag + this[i] + ' ';
+        }
+        console.log(Object.values(bag));
+    }
+    // SIZE
+    MyArray.prototype.sizeFun = function(){
+        return this.size;
+        // console.log(this.size);
+    }
+    let arr3 = new MyArray(1, 2, 3, 4, 5);
+    console.log(arr3);
+    console.log(typeof arr3);
+    console.log(">>>------>>>");
+    console.log("PUSH FUNCTION :");
+    arr3.push(11);
+    console.log(arr3);
+    console.log(">>>------>>>")
+    console.log("POP FUNCTION :");
+    arr3.pop();
+    console.log(arr3);
+    console.log(">>>------>>>")
+    console.log("TOP FUNCTION");
+    let temp_ele = arr3.top();
+    console.log(temp_ele);
+    console.log(">>>------>>>")
+    console.log("PRINT FUNCTION");
+    arr3.print();
+    console.log(">>>------>>>")
+    console.log("PRINT-REVERSE FUNCTION");
+    arr3.printReverse();
+    console.log(">>>------>>>")
+    console.log("SIZE FUNCTION");
+    let temp_ele2 = arr3.sizeFun();
+    console.log(temp_ele2);
+
+</script>
