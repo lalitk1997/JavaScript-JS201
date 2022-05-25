@@ -1,0 +1,29 @@
+h3{
+    text-align: center;
+}
+#form{
+    display: block;
+    width: 250px;
+    margin: auto;
+}
+label{
+    text-align: right;
+}
+input{
+    margin-left: 100px;
+    padding: 5px 5px 5px 5px;
+}
+#append{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    /* border: 1px solid black; */
+}
+#append > img{
+    margin: 10px 10px 10px 10px;
+    /* border: 1px solid red; */
+}
+#orderId > h3{
+    width: 80%;
+    text-align: center;
+}
