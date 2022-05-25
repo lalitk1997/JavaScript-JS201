@@ -1,0 +1,27 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+#nav{
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px 5px 5px 5px;
+    font-size: x-large;
+    display: flex;
+    justify-content: space-between;
+}
+#formInput{
+    border: 1px solid red;
+    padding: 5px 5px 5px 5px;
+}
+#formInput > form{
+    border: 1px solid black;
+    width: fit-content;
+    margin: auto;
+}
+#formInput > form > input{
+    display: block;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
+}
