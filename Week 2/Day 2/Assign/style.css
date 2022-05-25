@@ -1,0 +1,23 @@
+h1{
+    text-align: center;
+}
+#form{
+    /* border: 1px solid red; */
+    width: max-content;
+    margin: auto;
+}
+#form > form > input:nth-child(1){
+    display: block;
+    padding: 5%;
+}
+#form > form > input:nth-child(2){
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    padding: 5%;
+}
+#append{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+}
