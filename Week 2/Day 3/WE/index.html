@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch-2</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="" id="city">
+        <input type="submit" value="Search Weather">
+    </form>
+    <div id="container">
+        <!-- append data here -->
+    </div>
+</body>
+</html>
+
+<script>
+
+    let btn = document.querySelector("form").addEventListener("submit", getData);
+
+    // API KEY OF WHEATHER API
+    const api_key = '5881c4a70f1f474bc5289105d70aa1b5';
+
+    async function getData(event){
+        event.preventDefault();
+        let city = document.getElementById("city").value;
+        // URL TO CALL API
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5881c4a70f1f474bc5289105d70aa1b5`
+        try{
+            let response = await fetch(url);
+            let data = await response.json();
+            display(data);
+            console.log(data);
+        }catch (err){
+            console.log(err);
+        }
+    };
+
+    function display(data){
+
+        let container = document.querySelector("#container");
+        container.innerHTML = null;
+
+        let p_1 = document.createElement("p");
+        p_1.innerText = `Current Temp : ${data.main.temp}`;
+
+        let p_2 = document.createElement("p");
+        p_2.innerText = `Max Temp : ${data.main.temp_max}`;
+
+        let p_3 = document.createElement("p");
+        p_3.innerText = `Min Temp : ${data.main.temp_min}`;
+
+        container.append(p_1, p_2, p_3);
+    };
+
+</script>
