@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <!-- closuure -->
+</body>
+</html>
+<script>
+    // VALUE OF n IS STILL ACCESSIBLE INSIDE FUNCTION 3
+    // DUE TO DEPENDENCY OF CHILD FUNCTION TO PARENT FUNCTION
+    // EVEN IF n HAS LOCAL SCOPE
+
+    // FUNCTION 1
+    function great(){
+        let n = "raj";
+        // FUNCTION 2
+        return function (){
+            // FUNCTION 3
+            return function(){
+                return n;
+            }
+        }
+    }
+
+    // RETURNS FUNCTION2 IN PLAIN TEXT
+    let ret1 = great();
+    console.log(ret1);
+
+    // RETURN FUNCTION 3 IN PLAIN TEXT
+    let ret2 = ret1();
+    console.log(ret2);
+
+    // RETURNS VALUE OF n
+    let ret3 = ret2();
+    console.log(ret3);
+</script>
