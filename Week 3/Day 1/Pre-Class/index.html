@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 - 1</title>
+</head>
+<body>
+    <h3>ES6 Syntax</h3>
+</body>
+</html>
+<script>
+
+    // let keyword -> block scope
+    
+    // function syntax
+    function test(){
+        console.log("Hello World.");
+    }
+    test();
+
+    let test1 = function(){
+        console.log("Hello World..");
+    }
+    test1();
+
+    // ES6 Syntax
+    let test3 = () => {
+        console.log("Hello World...");
+    }
+    test3();
+
+    // const => local scope
+
+    {
+        let a = 20;
+        const b = 50;
+        console.log(a);
+        console.log(b);
+    }
+
+    // error : a & b is not defined
+    // console.log(a); 
+    // console.log(b);
+
+    // forEach using ES6
+
+    let arr = [1, 2, 3, 4, 5, 6, 8, 9, 10];
+    arr.forEach((ele) => {
+        console.log(ele);
+    });
+
+    // object methods using ES6
+    var myObj = {
+        name: "Lalit",
+        printName: () => {
+            console.log(this.name);
+        },
+        printName2: function(){
+            console.log(this.name);
+        }
+    }
+    // WILL NOT WORK WITH THIS KEYWORD
+    myObj.printName();
+    // normal method : WORKS WITH THIS
+    myObj.printName2();
+
+    // for loop using ES6
+    for(val of arr){
+        console.log(val);
+    }
+
+    // accessing obj attribute using ES6 
+    // de-structuring
+    const user = {
+        name: "Lalit",
+        age:  24,
+        city: "Gurgaon"
+    }
+    let {name, age, city} = user;
+    console.log(name, age, city);
+
+    function printUser({name, age, city}){
+        console.log(name, age, city);
+    }
+    printUser(user);
+
+    // spread
+    let col1 = ["blue", "green", "yellow"];
+    let col2 = ["pink", "violet", "orange"];
+    let col3 = [...col1, ...col2];
+    console.log(col3);
+
+    let num1 = [1, 2, 3];
+    let num2 = [...num1, 4, 5, 6];
+    console.log(num2);
+
+    // wrt objects
+    const user1 = {
+        name : "Lalit Kumar"
+    }
+    const city1 = {
+        city : "Pune"
+    }
+
+    const details = {...user1, ...city1};
+    console.log("details :", details);
+
+    // taking params of function 
+    function printArr(...params){
+        // all inputs are printed in array format
+        // console.log(params);
+        let sum = 0;
+        for(val of params){
+            sum = sum + parseInt(val);
+        }
+        console.log(sum);
+    }
+
+    printArr(1, 2, 3, 4, 5);
+
+
+</script>
