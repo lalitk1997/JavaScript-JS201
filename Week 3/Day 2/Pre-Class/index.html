@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 - 2</title>
+</head>
+<body>
+    <h3>Class & Inheritance</h3>
+</body>
+</html>
+<script>
+
+    // Constructor Function
+    function Person(name, age){
+        this.name = name;
+        this.age = age;
+    }
+    let p1 = new Person("Lalit", 24);
+    console.log(p1);
+    // adding attribute 
+    // added unde prototype
+    Person.prototype.city = "Gurgaon";
+
+    // Class (ES6)
+    class PersonCls{
+
+        constructor(n, a){
+            this.name = n;
+            this.age = a;
+        }
+        // showName(){
+        //     console.log(this.name);
+        // }
+    }
+    let p2 = new Person("RajMata", 72);
+    console.log(p2);
+    // p2.showName();
+
+    // Inheritance
+    class Student extends PersonCls{
+        constructor(n, a){
+            super(n, a);
+            this.role="student";
+        }
+    }
+    let stu1 = new Student("Raj", 14);
+    console.log(stu1);
+</script>
