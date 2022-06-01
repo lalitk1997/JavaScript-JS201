@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacks</title>
+</head>
+<body>
+    <h3>Learning Stack</h3>
+</body>
+</html>
+<script>
+    // CLASS IN javaScript
+    class Stack {
+        constructor(){
+            this.stk = [];
+            this.length = 0;
+        }
+        // METHODS
+        pushOp(val){
+            this.stk[this.length] = val;
+            this.length += 1;
+        }
+        popOp(){
+            if(this.length === 0){
+                console.log("Underflow!");
+            }else{
+                this.stk.pop();
+                this.length -= 1;
+            }
+        }
+        peekOp(){
+            console.log(this.stk[this.length-1]);
+        }
+    }
+
+    let s1 = new Stack();
+    s1.pushOp(1);
+    s1.pushOp(2);
+    s1.pushOp(3);
+    s1.popOp();
+    s1.popOp();
+    s1.peekOp();
+    console.log(s1);
+
+    // Inheritance
+
+    // PARENT CLASS
+    class Mobile{
+        constructor(brand, battery){
+            this.brand = brand;
+            this.battery = battery;
+            this.calling = true
+        }                                                  
+    }
+
+    let m1 = new Mobile("Apple", 3200);
+
+    class Smartphone extends Mobile{
+        constructor(brand, battery, camera, screensize){
+            super(brand, battery);
+            this.screensize = screensize;
+            this.camera = camera;
+        }
+    }
+    let m2 = new Mobile("Samsung", "5000", "25MPx", "6");
+    console.log(m2);
+
+</script>
