@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+<body>
+    <h3>Inheritance</h3>
+</body>
+</html>
+<script>
+
+    class car{
+        constructor(e){
+            this.door = 4;
+            this.window = 4;
+            this.seat = 4;
+            this.engine = e;
+        }
+    }
+
+    let carbody = new car(2);
+    console.log(carbody);
+
+    class jaguar extends car{
+        constructor(e, m){
+            super(e);
+            this.color = "black";
+            this.type = "luxury";
+            this.model = m;
+        }
+    }
+
+    let jaguartata = new jaguar(2, "TWF");
+    console.log(jaguartata);
+
+</script>

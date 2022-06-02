@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Array</title>
+</head>
+<body>
+    <h3>Custom Array Assignment</h3>
+</body>
+</html>
+<script>
+
+    // Create a custom Array constructor which will return an array object.
+    // It should have a property size based on the length of arguments passed.
+    // Add the arguments as key(index) value pairs in the Array object.
+    // Use the “.prototype” property to add custom methods to the Array.
+    // Add following methods :-
+    // .push // Should add an element at the end.
+    // .pop() // Should remove an element from the end.
+    // .top() // Should return the element at the last index.
+    // .print() // Should print the elements in a single line (e.g. [1,2,3,4]).
+    // .printReverse() // Should print the elements in a single line in reverse order.
+    // .size // Should return the length of the stack
+
+    class Array{
+        constructor(){
+            this.arr = [];
+            this.size = this.arr.length;
+        }
+        push(val){
+            this.arr[this.size] = val;
+            this.size += 1;
+        }
+        pop(){
+            this.size -= 1;
+        }
+        top(){
+            console.log(this.arr[this.size-1]);
+        }
+        print(){
+            // console.log(this.arr);
+            let bag = '';
+            for(let i=0; i<this.size; i++){
+                bag = bag + this.arr[i] + ' ';
+            }
+            console.log(bag);
+        }
+        printReverse(){
+            let bag = '';
+            for(let i=this.size; i>=0; i++){
+                bag = bag + this.arr[i];
+            }
+            console.log(bag);
+        }
+        sizeFunc(){
+            console.log(this.size);
+        }
+    };
+
+    let array = new Array();
+    array.push(10);
+    array.push(20);
+    array.push(30);
+    array.push(40);
+    array.print();
+    array.pop();
+    array.pop();
+    array.print();
+    array.top();
+    array.sizeFunc();
+
+</script>
