@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS Concepts</title>
+</head>
+<body>
+    <h3>OOPS Concepts</h3>
+</body>
+</html>
+<script>
+
+    // OOPS : Object Oriented Programming
+    // 1. abstraction
+    // 2. encapsulation DONE
+    // 3. inheritance DONE
+    // 4. polymorphism DONE
+    // Object
+    // Three ways to create an object : -
+    // 1. let obj = {} ==> object literal
+    // 2. object.create()
+    // 3. constructor function
+    // 4. Classes
+
+    // -----------------
+    // | ENCAPSULATION |
+    // -----------------
+    class User{
+        // PRIVATE 
+        #password;
+        constructor(name){
+            this.name = name;
+        }
+        #validateUsername(username){
+            return true;
+        }
+        #validatePassword(password){
+            return true;
+        }
+        signUp(username, password){
+            let isValidated = false;
+            isValidated = this.#validateUsername(username) && this.#validatePassword(password);
+        
+            if(isValidated){
+                this.username = username;
+                this.#password = password;
+                console.log("user sign-up successfully");
+            }else{
+                console.log("sign-up fail");
+            }
+        }
+        login(username, password){
+            if(username == this.username && password == this.#password){
+                console.log("logged in successfully");
+            }else{
+                console.log("authentication failed");
+            }
+        }
+        set password(newpassword){
+            this.#password = newpassword;
+        }
+        get userName(){
+            return this.name;
+        }
+    }
+    let user1 = new User("Lalit");
+    console.log(user1);
+    console.log(user1.name);
+
+    // NOT ACCESSIBLE TO USER --> PRIVATE FUNCTION
+    // console.log(user1.validateUsername("LalitK1997"));
+
+    // NOT ACCESSIBLE TO USER --> PRIVATE FUNCTION
+    // console.log(user1.validatePassword("lalit@321"));
+
+    user1.signUp("LalitK1997", "lalit@321");
+    user1.login("LalitK1997", "lalit@321");
+    // PASSWORD CHANGED USING set
+    user1.password = "123@lalit";
+    // authentication failed --> console o/p
+    user1.login("LalitK1997", "lalit@321"); 
+    user1.login("LalitK1997", "123@lalit");
+
+    console.log(user1.userName);
+    
+    // ---------------
+    // | INHERITANCE |
+    // ---------------
+    
+    class Author extends User{
+        constructor(name){
+            super(name);
+        }
+    }
+
+    class Admin extends User{
+        constructor(name){
+            super(name);
+        }
+    }
+
+    let admin = new Admin("Naresh");
+    admin.signUp("admin123", "master@123");
+    admin.login("admin123", "master@123");
+    admin.password = "main@123";
+    admin.login("admin123", "master@123");
+    admin.login("admin123", "main@123");
+
+    // ----------------
+    // | POLYMORPHISM |
+    // ----------------
+
+    class Vehicle{
+        run(){
+            console.log("Vehicle is running!.");
+        }
+    }
+
+    class Car extends Vehicle{
+        run(){
+            console.log("Car is running!.")
+        }
+    }
+
+    class Truck extends Vehicle{
+        run(){
+            console.log("Truck is running!.");
+        }
+    }
+
+    let v1 = new Vehicle();
+    v1.run();
+    let c1 = new Car();
+    c1.run();
+    let t1 = new Truck();
+    t1.run();
+
+    // -----------------
+    // | ABSTRACTION   |
+    // -----------------
+
+    class Employee{
+        constructor(){
+            if(this.constructor == Employee){
+                throw new Error("Object of Abstract Class cannot be created");
+            }
+        }
+        display(){
+            throw new Error("Abstract Method has no Implementation");
+        }
+    }
+
+    class Manager extends Employee{
+        display(){
+            console.log("I am Manager");
+        }
+    }
+
+    var manager = new Manager();
+    manager.display();
+</script>
