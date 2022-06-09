@@ -7,3 +7,23 @@ a > p{
     margin-left: 10px;
     margin-right: 10px;
 }
+#login-form-div > h2{
+    text-align: center;
+}
+#login-form-div{
+    width: 17%;
+    margin: auto;
+    border: 1px solid black;
+}
+form{
+    width: 100%;
+    display: block;
+}
+form > input{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+h2{
+    text-align: center;
+}
