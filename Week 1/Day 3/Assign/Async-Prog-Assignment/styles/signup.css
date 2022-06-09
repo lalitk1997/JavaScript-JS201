@@ -1,0 +1,9 @@
+#nav-bar{
+    display: flex;
+    justify-content: end;
+    border: 1px solid black;
+}
+a > p{
+    margin-left: 10px;
+    margin-right: 10px;
+}

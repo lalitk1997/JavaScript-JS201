@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="counter"></h1>
+</body>
+</html>
+<script>
+    let h1 = document.querySelector("#counter");
+    // setTimeout : one time
+    // setInterval : multiple times
+
+    // function counter(){
+    //     let i = 0;
+
+    //     setInterval(function(){
+    //         if(i == 60){
+    //             // WHY 60 SHOWING ?
+    //             i = i % 60;
+    //         }
+    //         i = i + 1;
+    //         // console.log(i);  
+    //         h1.innerText = i;
+    //     }, 100);
+    // }
+
+    // REVERSE TIMER 
+    function counter(){
+        let i = 60;
+
+        let id = setInterval(function(){
+            i = i - 1; 
+            h1.innerText = i;
+            // ALERT IS COMING AT 1 EVEN CONDITION IS 0
+            if(i === 0){
+                clearInterval(id);
+                alert("Timeout !!");
+            }
+        }, 100);
+    }
+
+    counter();
+</script>
