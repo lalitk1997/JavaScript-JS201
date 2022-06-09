@@ -7,3 +7,20 @@ a > p{
     margin-left: 10px;
     margin-right: 10px;
 }
+#movies{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+#movies > div{
+    margin: auto;
+    border: 1px solid black;
+}
+#movies > div > h3, p{
+    margin-left: 20px;
+}
+#movies > div > img{
+    border: 10px solid red;
+    width: 400px;
+    height: 400px;
+    margin-top: 10px;
+}
