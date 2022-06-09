@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Commerce 1</title>
+  </head>
+  <body>
+    <!-- 1.Make an ECommerce admin panel dashboard (admin.html). 
+    2.This dashboard will be used by the seller for listing the items on the website. 
+    3.Make a simple input form which will accept the following entries :- -->
+    <form action="">
+        <h2>Admin Panel</h2>
+        <p>Product Name</p>
+        <input type="text" name="" id="name" placeholder="Product Name" required>
+        <p>Category</p>
+        <input type="text" name="" id="category" placeholder="Category" required>
+        <p>Image URL</p>
+        <input type="url" name="" id="image" placeholder="Image URL" required>
+        <p>Price</p>
+        <input type="number" name="" id="price" placeholder="Price" required>
+        <p>Gender</p>
+        <select name="" id="gender">
+            <!-- <option value="">Select Gender</option> -->
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <p>Sold</p>
+        <input type="radio" name="sold" id="true" value="true">
+        <label for="true">True</label><br>
+        <input type="radio" name="sold" id="false" value="false" checked>
+        <label for="true">False</label><br>
+        <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
+<script src="script.js"></script>
