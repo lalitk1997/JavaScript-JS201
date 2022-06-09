@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce 2</title>
+    <style>
+        h2, h3{
+            text-align: center;
+        }
+        #displayitems{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        #displayitems > div{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    1. Create a page (products.html) to display all the products which are present in the database in grid format.
+    2. Each product should have two buttons :-
+    Remove :- On clicking it should be removed from the database and changes should be reflected on DOM in real time.
+    Sold :- On clicking which the sold value will toggle. If it is true it becomes false and vice versa.
+    3. The page should contain a counter to show the total number of products listed in real time. -->
+    <h3>Display Count (Number of items)</h3>
+    <div id="counter">
+
+    </div>
+    <h2>Products Page</h2>
+    <div id="displayitems">
+
+    </div>
+</body>
+</html>
+<script src="products.js"></script>

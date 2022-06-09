@@ -1,23 +1,16 @@
-let getData = async(url)=>{
-    let res = await fetch(url);
-     let data = await res.json()
+// const url = 'https://fakestoreapi.com/products/category/electronics'; 
 
-     return data;
-}
+async function getData(){
+    try{
+        let res = await fetch(url);
+        let data = await res.json();
+        // CALLING FUNC TO APPEND TO FRONT-END
+        // console.log(data);
+        return data;
+    }catch(err){
+        console.log(err);
+    }
+};
+// getData(url);
 
-let append = (data,container)=>{
-       
-    data.forEach((ele)=>{
-        let div = document.createElement("div")
-
-        let img = document.createElement('img')
-        img.src = ele.image;
-
-        let name = document.createElement("h3")
-        name = ele.title
-        div.append(img,name)
-        container.append(div)
-    })
-}
-
-export {getData,append};
+export {getData};
