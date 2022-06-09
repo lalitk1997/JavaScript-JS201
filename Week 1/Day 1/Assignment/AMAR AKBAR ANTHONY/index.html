@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Method</title>
+</head>
+<body>
+    <h3>AMAR AKBAR ANTHONY ASSIGNMENT</h3>
+</body>
+</html>
+<script>
+    let amar = {
+        location:"goa",
+        profession:["singer"]
+    }
+
+    let akbar = {
+        location:"mumbai",
+        profession:["chef"]
+    }
+
+    let anthony = {
+        location:"kashmir",
+        profession:["magician"]
+    }
+
+    function skill(prof){
+        this.profession.push(prof);
+    }
+
+    skill.call(amar, akbar.profession[0]);
+    skill.call(akbar,amar.profession[0])
+    skill.call(anthony,akbar.profession[0])
+
+    console.log(amar);
+    console.log(akbar);
+    console.log(anthony);
+</script>
