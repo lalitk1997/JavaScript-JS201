@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Products</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
+</head>
+<body>
+    <div id="navbar">
+        <!-- append navbar here -->
+    </div>
+    <h1>Electronics Products</h1>
+    <div id="container">
+        <!-- append data here -->
+    </div>
+</body>
+</html>
+<script type="module">
+    import navbar from "./components/navbar.js";
+    document.getElementById("navbar").innerHTML = navbar();
+    const url = "https://fakestoreapi.com/products/category/electronics";
+    async function getData(url){
+        let res = await fetch(url);
+        let data = await res.json();
+        appendData(data);
+        // console.log(data);
+    };
+    getData(url)
+    function appendData(data){
+        let container = document.getElementById("container");
+        data.forEach(element => {
+            let p = document.createElement("p");
+            let img = document.createElement("img");
+            let div = document.createElement("div");
+            p.innerText = element.title;
+            img.src = element.image;
+            div.append(img, p);
+            container.append(div);
+        });
+    };
+</script>
