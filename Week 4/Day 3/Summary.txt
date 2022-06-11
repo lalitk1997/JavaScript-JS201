@@ -1,0 +1,10 @@
+WEBPACK, AXIOS (used instead of fetch for API request)
+npm install webpack webpack-cli --save-dev => WEBPACK INSTALLATION
+dist > index.html
+src > index.js
+UPDATE package.json "private": true
+npm install axios => AXIOS INSTALLATION
+npm webpax => RUN COMMAND
+webpack.config.js => COPY BOILERPLATE CODE
+npm i style-loader css-loader => INSTALL
+main.js => APPEARED IN dist
