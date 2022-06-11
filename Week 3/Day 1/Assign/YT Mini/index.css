@@ -1,0 +1,147 @@
+:root {
+    --dark-theme-background-color: #212121;
+    --dark-theme-base-color: #fff;
+    --dark-theme-text-color: #fff;
+    --dark-theme-secondary-color: #bcbcbc;
+    --dark-theme-disabled-color: #646464;
+    --dark-theme-divider-color: #3c3c3c;
+    --searchbox-background-primary: hsl(0, 0%, 7%);
+    --searchbox-text-color: hsla(0, 100%, 100%, 0.88);
+    --text-primary-color: var(--dark-theme-text-color);
+}
+
+body {
+    margin: 0;
+    background-color: black;
+}
+
+.navbar {
+    height: 56px;
+    background-color: var(--dark-theme-background-color);
+    padding: 0px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.startNav,
+.centerNav,
+.endNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .startNav i{
+    color: var(--dark-theme-base-color);
+    font-size: 26px;
+} */
+.listBar {
+    padding: 8px;
+}
+
+.listBar>div {
+    cursor: pointer;
+}
+
+.listBar>div>div {
+    width: 20px;
+    height: 1.5px;
+    margin: 5px 0px;
+    background-color: var(--dark-theme-base-color);
+}
+
+.logobox {
+    padding: 18px 14px 18px 16px;
+    cursor: pointer;
+}
+
+.logobox a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+
+}
+
+.logobox a p {
+    font-size: 22px;
+}
+
+.logobox a sup {
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--dark-theme-secondary-color);
+}
+
+.logobox .logo {
+    height: 20px;
+    width: 30px;
+    margin: 0px 4px;
+}
+
+.centerNav {
+    display: flex;
+    flex: 0 1 728px;
+    min-width: 0px;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed red;
+
+}
+
+.searchBox {
+    display: flex;
+    margin: 0 0 0 40px;
+    padding: 0px 4px;
+    border: 1px dashed yellow;
+    flex: 1;
+    flex-basis: 1e-9px;
+}
+
+.searchForm {
+    display: flex;
+    height: 40px;
+    position: relative;
+    flex: 1;
+    flex-basis: 1e-9px;
+    border: 1px solid blue;
+    width: 100%;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 0;
+    padding: 0 10px;
+}
+
+.searchIcon i {
+    color: black;
+}
+
+.searchInput {
+    display: block;
+    width: 100%;
+}
+
+.searchInput #query {
+    background-color: var(--searchbox-background-primary);
+    color: var(--searchbox-text-color);
+    height: 90%;
+    border: none;
+    font-family: 'Roboto','Noto',sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-left: 4px;
+    max-width: 100%;
+    width: 100%;
+}
+
+#youtube-paths > path{
+    fill: white;
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://kit.fontawesome.com/b0071033d8.js" crossorigin="anonymous"></script>
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+   <title>Youtube</title>
+   <style>
+      * {
+
+         font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      body {
+         overflow-x: hidden;
+      }
+
+      #append {
+         display: grid;
+
+         grid-template-columns: repeat(4, 1fr);
+         gap: 30px;
+      }
+
+      #nevbar {
+         display: flex;
+         width: 100%;
+         height: 45px;
+         padding: 5px;
+         position: sticky;
+         top: 0;
+         /* border: 1px solid red; */
+         justify-content: space-between;
+         background-color: white;
+      }
+
+      #leftNavBar {
+         display: flex;
+         width: 15%;
+         height: 100%;
+         /* border: 1px solid blueviolet; */
+         justify-content: space-evenly;
+      }
+
+      #leftNavBar-logo {
+         display: flex;
+         /* border: 1px solid blue; */
+
+
+      }
+
+      #leftNavBar-hambarger {
+         display: flex;
+         margin-left: 15px;
+         justify-content: center;
+         align-items: center;
+         font-size: 22px;
+
+      }
+
+      #rightNavBar {
+         display: flex;
+         width: 20%;
+         /* border: 1px solid green;    */
+         justify-content: space-around;
+      }
+
+      #midNavBar {
+         display: flex;
+         width: 45%;
+         /* border: 1px solid black; */
+         /* padding: 20px; */
+
+      }
+
+      #midNavBar>input {
+         width: 80%;
+         border: 0.5px solid black;
+         outline: none;
+      }
+
+      #midNavBar>button {
+         width: 10%;
+
+         font-size: 22px;
+
+      }
+
+      #midNavBar>div {
+
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         font-size: 22px;
+         margin-left: 30px;
+
+      }
+
+      .rightNavbar-div {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         font-size: 22px;
+
+
+      }
+
+      #container {
+         margin: auto;
+      }
+   </style>
+</head>
+
+<body>
+   <div id="nevbar">
+      <div id="leftNavBar">
+         <div id="leftNavBar-hambarger"><i class="fa-solid fa-bars"></i></div>
+         <div id="leftNavBar-logo">
+            <img src="https://www.logo.wine/a/logo/YouTube/YouTube-Logo.wine.svg" style="width: 150px;">
+         </div>
+      </div>
+      <div id="midNavBar">
+         <input type="search" placeholder="Search" id="search">
+         <button onclick="searchmovies()">
+            <ion-icon name="search-outline"></ion-icon>
+         </button>
+         <div class="midNavBar-div"><i class="fa-solid fa-microphone"></i></div>
+      </div>
+      <div id="rightNavBar">
+         <div class="rightNavbar-div">
+            <ion-icon class="leftelements" name="videocam-outline"></ion-icon>
+         </div>
+
+         <div class="rightNavbar-div">
+            <ion-icon class="leftelements" name="apps-outline"></ion-icon>
+         </div>
+         <div class="rightNavbar-div"><i class="fa-solid fa-bell"></i></div>
+         <div class="rightNavbar-div"><i class="fa-regular fa-face-smile"></i></div>
+      </div>
+   </div>
+   <div id="container"></div>
+</body>
+
+</html>
+<script>
+   let data = JSON.parse(localStorage.getItem("video"))
+
+   console.log(data)
+
+   const con = document.getElementById("container");
+
+   let ifrDiv = document.createElement("div");
+
+   let iframe = document.createElement("iframe");
+   iframe.src = `https://www.youtube.com/embed/${data.videoId}`;
+   iframe.style.width = "80%";
+   iframe.style.height = "auto";
+   iframe.style.aspectRatio = "16/9"
+   iframe.allow = "fullscreen";
+   iframe.style.margin = "auto";
+
+   let title = document.createElement("h3");
+   title.innerText = data.title;
+   title.style.width = "80%"
+
+   con.append(iframe, title);
+   document.getElementById("container").append(con);
+</script>
