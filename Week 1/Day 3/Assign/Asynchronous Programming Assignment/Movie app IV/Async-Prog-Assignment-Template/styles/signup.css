@@ -1,0 +1,64 @@
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+body{
+    background-color: #141518;
+}
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+#navbar{
+    display: flex;
+    justify-content: flex-end;
+    border: 2px solid black;
+    position: sticky;
+    background-color: white;
+}
+#navbar>a{
+    margin: 10px 20px;
+    text-decoration: none;
+    color: black;
+}
+#signup-form-div{
+    /* border: 1px solid blue; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    border-radius: 5px;
+    /* flex-direction: column; */
+    margin: 20px;
+    width: 300px;
+    justify-content: center;
+    margin: auto;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    background-color: #2c2f34;
+}
+#signUpDetails{
+    text-align: center;
+    
+}
+input{
+    margin: 8px;
+    padding: 5px;
+    font-weight: normal; 
+    outline: 0; 
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: #212121
+}
+
+input[type="text"]:focus,input[type="email"]:focus,input[type="password"]:focus{
+    color: #f2f2f2;
+    border: 1px solid #1bb76e;
+}
+#submit{
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 30px;
+    cursor: pointer;
+}
