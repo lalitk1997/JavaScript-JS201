@@ -1,0 +1,13 @@
+JEST : JavaScript Testing
+node -v => TO CHECK NODE VERSION v18.3.0
+npm -v => TO CHECK NPM VERSION 8.11.0
+npm init => package.json : CONTAINS LIST OF ALL PACKAGES INSTALLED
+npm install jest => COMMAND TO INSTALL JEST
+npm install --save-dev babel-jest @babel/core @babel/present-env => INSTALL BABEL FOR ES6 SUPPORT
+CREATE babel.config.js => TO TEST js CODE
+sum.js => CODE JS (EXPORT CODE)
+sum.test.js => TEST-CASE TO BE RUN ON test.js (IMPORT CODE)
+"test": "jest" => UPDATE package.json FILE
+npm test => COMMAND TO RUN sum.test.js
+
+Matchers : toBe()

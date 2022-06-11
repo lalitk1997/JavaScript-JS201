@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impot And Export</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="navbar">
+    </div>
+    <h3>electronics</h3>
+    <div id="append1"></div>
+</body>
+</html>
+
+<script type="module">
+  import navbar from "/component/navbar.js"
+
+ 
+ document.getElementById("navbar").innerHTML = navbar()
+
+ import {getData,append} from "/script/appenFetch.js"
+let url ='https://fakestoreapi.com/products/category/electronics'
+ let data =await getData(url)
+ console.log(data)
+ let cont = document.getElementById("append1")
+//  console.log(data,cont)
+append(data,cont)
+</script>
