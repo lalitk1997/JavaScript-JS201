@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/styles/global.css">    
+</head>
+<body>
+
+   
+    <header></header>
+    <h3 id="showName"></h3>
+    <div id="container"></div>
+    
+</body>
+</html>
+
+<script type="module">
+      import navbar from "./components/navbar.js"
+      import{append} from "./components/append.js"
+      import{searchRes} from "./components/fetch.js"
+      
+      // navebar()
+        document.querySelector("header").innerHTML = navbar()
+       search.addEventListener("submit", async () => {
+        event.preventDefault();
+  
+       let search = event.target.querySelector("input").value;
+       let data = await searchRes(search);
+       append(data);
+  });
+
+  let name = JSON.parse(localStorage.getItem("user"));
+  document.querySelector("#showName").innerHTML = `Welcome : ${name}`;
+      
+</script>
+
+
+

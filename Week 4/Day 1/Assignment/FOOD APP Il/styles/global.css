@@ -1,0 +1,33 @@
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid red;
+}
+#box3{
+  display: flex;
+  gap: 20px;
+}
+input{
+   width: 400px;
+   height: 30px;
+}
+#container{
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   gap: 30px;
+    padding: 10px;
+}
+
+img{
+   width: auto;
+   height: 300px;
+   border: 1px black solid;
+}
+
+a{
+   text-decoration: none;
+   color: black;
+    font-size: 20px;
+}
