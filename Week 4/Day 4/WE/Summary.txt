@@ -1,0 +1,7 @@
+GET, DELAY, POST, PATCH & PUT REQUEST
+node init
+npm i json-server
+create db.json => CONTAINS SERVER DATA
+create server.js => SERVER CONFIG
+node server.js => TO START SERVER
+http://localhost:3000/ => TO CHECK THE HOSTED SERVER
