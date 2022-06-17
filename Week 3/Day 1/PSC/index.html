@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star-Wars</title>
+</head>
+<body>
+    <form action="">
+        <h2>STAR WARS</h2>
+        <input type="text" name="" id="query" oninput="debounce(main, 300)">
+    </form>
+    <div id="append">
+        <!-- append STAR WARS CHARACTERS here -->
+    </div>
+</body>
+</html>
+<script>
+    let query = document.querySelector("#query").addEventListener("keypress", main);
+    async function main(){
+        let query = document.querySelector("#query").value;
+        // console.log(query);
+        let res = searchCharacters(query);
+        let data = await res;
+        // console.log(data);
+        appendCharacters(data);
+    };
+    async function searchCharacters(query){
+        try{
+            let res = await fetch(`https://swapi.dev/api/people/?search=${query}`);
+            // console.log(res);
+            let data = await res.json();
+            return data.results;
+            // console.log(data.results);
+        }catch(error){
+            console.log(error);
+        }
+    };
+    async function appendCharacters(data){
+        // console.log(data);
+        let div = document.querySelector("#append");
+        div.innerHTML = null;
+        data.forEach(ele => {
+            let name = document.createElement("p");
+            name.innerText = ele.name;
+            let card = document.createElement("div");
+            card.append(name);
+            div.append(card);
+        });
+    }
+    var id;
+    function debounce(func, delay) {
+        if (id) {
+            clearTimeout(id);
+        }
+        id = setTimeout(function () {
+            func()
+        }, delay)
+    }
+
+</script>
